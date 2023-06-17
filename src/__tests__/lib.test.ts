@@ -6,8 +6,16 @@ jest.mock('fs');
 jest.mock('@1password/op-js');
 
 describe(config, () => {
+  const env = process.env;
+
   beforeEach(() => {
+    jest.resetModules();
+    process.env = { ...env };
     jest.spyOn(process, 'cwd').mockReturnValue('/path/to/cwd');
+  });
+
+  afterEach(() => {
+    process.env = env;
   });
 
   it.each([
@@ -130,5 +138,19 @@ describe(config, () => {
     config({ target });
     expect(target).toStrictEqual({});
     expect(getItemSpy).toHaveBeenCalled();
+  });
+
+  it('uses the ENVLOCKER_ENV_NAME environment variable', () => {
+    process.env['ENVLOCKER_ENV_NAME'] = 'staging';
+    jest.spyOn(fs, 'readFileSync').mockReturnValue(
+      JSON.stringify({
+        staging: { item: 'the staging item name' },
+      }),
+    );
+    const getItemSpy = jest.spyOn(item, 'get').mockReturnValue({} as Item);
+
+    const target = {};
+    config({ target });
+    expect(getItemSpy.mock.calls).toMatchSnapshot();
   });
 });

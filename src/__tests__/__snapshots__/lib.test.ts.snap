@@ -140,3 +140,15 @@ exports[`config injects environment variables 16`] = `[]`;
 exports[`config injects environment variables 17`] = `{}`;
 
 exports[`config injects environment variables 18`] = `[]`;
+
+exports[`config uses the ENVLOCKER_ENV_NAME environment variable 1`] = `
+[
+  [
+    "the staging item name",
+    {
+      "account": undefined,
+      "vault": undefined,
+    },
+  ],
+]
+`;
