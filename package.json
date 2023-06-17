@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && ./scripts/build.sh",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "pnpm test && pnpm build",
     "test": "jest"
   },
   "dependencies": {
