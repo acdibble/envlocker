@@ -35,7 +35,7 @@ You will need to create a `.envlockerrc` file at the root of your project:
 The `development` and `production` keys are the names of the environments you
 want to use. You can add as many different environments with different names as
 you want. The default environment is `development`, but this can be configured
-with the `OP_ENV_NAME` environment variable.
+with the `ENVLOCKER_ENV_NAME` environment variable.
 
 The `vault` key is optional but is recommended to reduce the number of
 API calls to 1Password. The `account` key is also optional and defaults to
