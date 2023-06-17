@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inject injects environment variables 1`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 2`] = `
+[
+  [
+    "development-item",
+    {
+      "account": undefined,
+      "vault": undefined,
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 3`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 4`] = `
+[
+  [
+    "development-item",
+    {
+      "account": undefined,
+      "vault": undefined,
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 5`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 6`] = `
+[
+  [
+    "production-item",
+    {
+      "account": undefined,
+      "vault": undefined,
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 7`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 8`] = `
+[
+  [
+    "development-item",
+    {
+      "account": undefined,
+      "vault": "vault-name",
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 9`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 10`] = `
+[
+  [
+    "development-item",
+    {
+      "account": "account-name",
+      "vault": undefined,
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 11`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 12`] = `
+[
+  [
+    "development-item",
+    {
+      "account": "account-name",
+      "vault": "vault-name",
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 13`] = `
+{
+  "BAZ": "QUX",
+  "FOO": "bar",
+}
+`;
+
+exports[`inject injects environment variables 14`] = `
+[
+  [
+    "arbitrary-item",
+    {
+      "account": undefined,
+      "vault": undefined,
+    },
+  ],
+]
+`;
+
+exports[`inject injects environment variables 15`] = `{}`;
+
+exports[`inject injects environment variables 16`] = `[]`;
+
+exports[`inject injects environment variables 17`] = `{}`;
+
+exports[`inject injects environment variables 18`] = `[]`;
