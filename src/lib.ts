@@ -17,7 +17,7 @@ type InjectOptions = {
 
 export const config = ({
   target = process.env as Record<string, string>,
-  envName = process.env['OP_ENV_NAME'] ?? 'development',
+  envName = process.env['ENVLOCKER_ENV_NAME'] ?? 'development',
 }: InjectOptions = {}): void => {
   try {
     const opEnv = JSON.parse(
