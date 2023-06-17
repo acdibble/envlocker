@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`inject injects environment variables 1`] = `
+exports[`config injects environment variables 1`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 2`] = `
+exports[`config injects environment variables 2`] = `
 [
   [
     "development-item",
@@ -19,14 +19,14 @@ exports[`inject injects environment variables 2`] = `
 ]
 `;
 
-exports[`inject injects environment variables 3`] = `
+exports[`config injects environment variables 3`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 4`] = `
+exports[`config injects environment variables 4`] = `
 [
   [
     "development-item",
@@ -38,14 +38,14 @@ exports[`inject injects environment variables 4`] = `
 ]
 `;
 
-exports[`inject injects environment variables 5`] = `
+exports[`config injects environment variables 5`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 6`] = `
+exports[`config injects environment variables 6`] = `
 [
   [
     "production-item",
@@ -57,14 +57,14 @@ exports[`inject injects environment variables 6`] = `
 ]
 `;
 
-exports[`inject injects environment variables 7`] = `
+exports[`config injects environment variables 7`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 8`] = `
+exports[`config injects environment variables 8`] = `
 [
   [
     "development-item",
@@ -76,14 +76,14 @@ exports[`inject injects environment variables 8`] = `
 ]
 `;
 
-exports[`inject injects environment variables 9`] = `
+exports[`config injects environment variables 9`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 10`] = `
+exports[`config injects environment variables 10`] = `
 [
   [
     "development-item",
@@ -95,14 +95,14 @@ exports[`inject injects environment variables 10`] = `
 ]
 `;
 
-exports[`inject injects environment variables 11`] = `
+exports[`config injects environment variables 11`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 12`] = `
+exports[`config injects environment variables 12`] = `
 [
   [
     "development-item",
@@ -114,14 +114,14 @@ exports[`inject injects environment variables 12`] = `
 ]
 `;
 
-exports[`inject injects environment variables 13`] = `
+exports[`config injects environment variables 13`] = `
 {
   "BAZ": "QUX",
   "FOO": "bar",
 }
 `;
 
-exports[`inject injects environment variables 14`] = `
+exports[`config injects environment variables 14`] = `
 [
   [
     "arbitrary-item",
@@ -133,10 +133,10 @@ exports[`inject injects environment variables 14`] = `
 ]
 `;
 
-exports[`inject injects environment variables 15`] = `{}`;
+exports[`config injects environment variables 15`] = `{}`;
 
-exports[`inject injects environment variables 16`] = `[]`;
+exports[`config injects environment variables 16`] = `[]`;
 
-exports[`inject injects environment variables 17`] = `{}`;
+exports[`config injects environment variables 17`] = `{}`;
 
-exports[`inject injects environment variables 18`] = `[]`;
+exports[`config injects environment variables 18`] = `[]`;
