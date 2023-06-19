@@ -1,8 +1,13 @@
 import * as fs from 'fs';
 import { Item, item } from '@1password/op-js';
-import { config } from '../lib';
+import { config, createItemFromEnvFile } from '../lib';
 
-jest.mock('fs');
+jest.mock('fs', () => ({
+  readFileSync: jest.fn(),
+  promises: {
+    readFile: jest.fn(),
+  },
+}));
 jest.mock('@1password/op-js');
 
 describe(config, () => {
@@ -153,4 +158,34 @@ describe(config, () => {
     config({ target });
     expect(getItemSpy.mock.calls).toMatchSnapshot();
   });
+});
+
+describe(createItemFromEnvFile, () => {
+  it.each([
+    {},
+    { account: 'my.1password.com' },
+    { category: 'Login' },
+    { account: 'my.1password.com', category: 'Login' },
+  ] as const)(
+    'creates an item in 1password from a .env file',
+    async (options) => {
+      jest.spyOn(fs.promises, 'readFile').mockResolvedValue(`FOO=bar
+baz = qux
+BAZ= QUX
+`);
+
+      const createItemSpy = jest
+        .spyOn(item, 'create')
+        .mockImplementation(() => undefined as any);
+
+      await createItemFromEnvFile({
+        filePath: '/path/to/.env',
+        title: 'new-app',
+        vault: 'env-vars',
+        ...options,
+      });
+
+      expect(createItemSpy.mock.calls).toMatchSnapshot();
+    },
+  );
 });

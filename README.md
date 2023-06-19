@@ -56,6 +56,13 @@ Command line:
 $ node -r envlocker/config ./index.js
 ```
 
+or if using it with a different executable that doesn't pass flags to Node.js
+(e.g. Next.js):
+
+```bash
+$ NODE_OPTIONS='-r envlocker/config' pnpm next
+```
+
 Programmatically with `import`:
 
 ```ts
@@ -89,10 +96,36 @@ if they do not match the pattern `^[A-Z0-9_]+$`.
 Injects the environment variables into `process.env`. The environment name can
 also be passed as an argument to this function.
 
+Uses `dotenv` to inject the environment variables.
+
 ```ts
 import { config } from 'envlocker';
 
 config({ envName: 'staging' });
+```
+
+#### `createItemFromEnvFile`
+
+Creates a new item in 1password from a `.env` file. The `.env` file must be
+formatted as `KEY=VALUE` pairs, one per line. The `title` and `vault` options
+are required. The `account` option is optional and defaults to whichever account
+`op` is currently logged into. The `category` option is also optional and
+defaults to `Server`.
+
+Uses `dotenv` to parse the `.env` file.
+
+```ts
+type CreateItemFromEnvFileOptions = {
+  filePath: string;
+  title: string;
+  vault: string;
+  account?: string;
+  category?: op.InputCategory;
+};
+
+export const createItemFromEnvFile = async (
+  options: CreateItemFromEnvFileOptions,
+): Promise<op.Item>
 ```
 
 ### Limitations
