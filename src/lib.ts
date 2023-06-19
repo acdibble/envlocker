@@ -2,7 +2,7 @@ import assert from 'assert';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as op from '@1password/op-js';
-import { populate } from 'dotenv';
+import { populate, parse } from 'dotenv';
 
 type OpEnv = {
   item: string;
@@ -46,4 +46,29 @@ export const config = ({
 
     populate(target, newEnv);
   } catch {}
+};
+
+export const envFileToItem = async ({
+  filePath,
+  title,
+  vault,
+  account,
+}: {
+  filePath: string;
+  title: string;
+  vault: string;
+  account?: string;
+}) => {
+  const env = parse(await fs.promises.readFile(filePath, 'utf8'));
+
+  const fieldAssignments = Object.entries(env)
+    .filter(([key, value]) => Boolean(key && value && /^[\dA-Z_]+$/.test(key)))
+    .map(([key, value]) => [key, 'concealed', value] as op.FieldAssignment);
+
+  op.item.create(fieldAssignments, {
+    vault,
+    title,
+    account,
+    category: 'Server',
+  });
 };

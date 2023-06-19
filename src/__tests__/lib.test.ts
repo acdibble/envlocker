@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import { Item, item } from '@1password/op-js';
-import { config } from '../lib';
+import { config, envFileToItem } from '../lib';
 
 jest.mock('fs');
 jest.mock('@1password/op-js');
@@ -153,4 +153,8 @@ describe(config, () => {
     config({ target });
     expect(getItemSpy.mock.calls).toMatchSnapshot();
   });
+});
+
+describe(envFileToItem, () => {
+  it.todo('creates an item in 1password from a .env file');
 });
