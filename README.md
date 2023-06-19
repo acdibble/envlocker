@@ -56,6 +56,13 @@ Command line:
 $ node -r envlocker/config ./index.js
 ```
 
+or if using it with a different executable that doesn't pass flags to Node.js
+(e.g. Next.js):
+
+```bash
+$ NODE_OPTIONS='-r envlocker/config' pnpm next
+```
+
 Programmatically with `import`:
 
 ```ts
