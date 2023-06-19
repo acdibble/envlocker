@@ -48,27 +48,26 @@ export const config = ({
   } catch {}
 };
 
-export const envFileToItem = async ({
-  filePath,
-  title,
-  vault,
-  account,
-}: {
+type CreateItemFromEnvFileOptions = {
   filePath: string;
   title: string;
   vault: string;
   account?: string;
-}) => {
+  category?: op.InputCategory;
+};
+
+export const createItemFromEnvFile = async ({
+  filePath,
+  title,
+  vault,
+  account,
+  category = 'Server',
+}: CreateItemFromEnvFileOptions) => {
   const env = parse(await fs.promises.readFile(filePath, 'utf8'));
 
   const fieldAssignments = Object.entries(env)
     .filter(([key, value]) => Boolean(key && value && /^[\dA-Z_]+$/.test(key)))
     .map(([key, value]) => [key, 'concealed', value] as op.FieldAssignment);
 
-  op.item.create(fieldAssignments, {
-    vault,
-    title,
-    account,
-    category: 'Server',
-  });
+  op.item.create(fieldAssignments, { vault, title, account, category });
 };

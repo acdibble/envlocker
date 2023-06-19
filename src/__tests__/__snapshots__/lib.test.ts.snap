@@ -152,3 +152,103 @@ exports[`config uses the ENVLOCKER_ENV_NAME environment variable 1`] = `
   ],
 ]
 `;
+
+exports[`createItemFromEnvFile creates an item in 1password from a .env file 1`] = `
+[
+  [
+    [
+      [
+        "FOO",
+        "concealed",
+        "bar",
+      ],
+      [
+        "BAZ",
+        "concealed",
+        "QUX",
+      ],
+    ],
+    {
+      "account": undefined,
+      "category": "Server",
+      "title": "new-app",
+      "vault": "env-vars",
+    },
+  ],
+]
+`;
+
+exports[`createItemFromEnvFile creates an item in 1password from a .env file 2`] = `
+[
+  [
+    [
+      [
+        "FOO",
+        "concealed",
+        "bar",
+      ],
+      [
+        "BAZ",
+        "concealed",
+        "QUX",
+      ],
+    ],
+    {
+      "account": "my.1password.com",
+      "category": "Server",
+      "title": "new-app",
+      "vault": "env-vars",
+    },
+  ],
+]
+`;
+
+exports[`createItemFromEnvFile creates an item in 1password from a .env file 3`] = `
+[
+  [
+    [
+      [
+        "FOO",
+        "concealed",
+        "bar",
+      ],
+      [
+        "BAZ",
+        "concealed",
+        "QUX",
+      ],
+    ],
+    {
+      "account": undefined,
+      "category": "Login",
+      "title": "new-app",
+      "vault": "env-vars",
+    },
+  ],
+]
+`;
+
+exports[`createItemFromEnvFile creates an item in 1password from a .env file 4`] = `
+[
+  [
+    [
+      [
+        "FOO",
+        "concealed",
+        "bar",
+      ],
+      [
+        "BAZ",
+        "concealed",
+        "QUX",
+      ],
+    ],
+    {
+      "account": "my.1password.com",
+      "category": "Login",
+      "title": "new-app",
+      "vault": "env-vars",
+    },
+  ],
+]
+`;
